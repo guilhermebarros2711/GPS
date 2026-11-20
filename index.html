@@ -22,6 +22,42 @@
     .routehead{display:flex;align-items:center;justify-content:space-between;gap:12px}.routehead span{font-size:12px;color:var(--muted)}canvas{display:block;width:100%;height:170px;background:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px),#0c1922;background-size:28px 28px;border:1px solid #263b48;border-radius:15px;margin-top:13px}.toolrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:11px}.minorbtn{background:none;border:1px solid #4a606d;color:#d8e9ee;padding:9px 13px;border-radius:11px;font-size:12px;font-weight:700}.minorbtn:disabled{color:#80919a}.note{font-size:12px;color:var(--muted);line-height:1.55}.alert{padding:12px 14px;background:#382d26;border:1px solid #74523d;border-radius:13px;font-size:12px;line-height:1.55;color:#ffe2c5;margin-top:12px;display:none}.alert.visible{display:block}.historyrow{padding:12px 0;display:flex;justify-content:space-between;gap:9px;border-bottom:1px solid #2b3c47}.historyrow:last-child{border-bottom:none;padding-bottom:2px}.historyrow:first-child{padding-top:0}.historyrow strong{font-size:13px}.historyrow p{font-size:12px;color:var(--muted);margin:4px 0 0}.historyright{text-align:right;white-space:nowrap}.historyright strong{color:var(--green)}.historyright small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.footer{text-align:center;color:#77909c;font-size:11px;margin-top:25px;line-height:1.5}
     @media(min-width:680px){.wrap{padding:28px 24px 70px}.layout{display:grid;grid-template-columns:1.05fr 1fr;gap:13px;align-items:stretch}.hero{min-height:420px;display:flex;flex-direction:column;justify-content:center}.speedring{width:min(32vw,255px);height:min(32vw,255px)}.cards{margin:0;gap:12px}.stat{min-height:122px}.actions{max-width:580px;margin:16px auto 0}.tag{font-size:13px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+    /* Diario de evolucao: historico local, graficos leves sem bibliotecas */
+    [hidden]{display:none!important}
+    .progress-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--round);padding:17px}
+    .progress-intro{margin:0 0 15px;color:var(--muted);font-size:12px;line-height:1.5}
+    .progress-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .progress-tile{background:#0e1a24;border:1px solid #2a3c49;border-radius:15px;padding:13px}
+    .progress-tile span{display:block;color:var(--muted);font-size:11px}
+    .progress-tile strong{font-size:24px;font-weight:800;letter-spacing:-.04em;display:block;margin-top:5px;font-variant-numeric:tabular-nums}
+    .progress-tile small{font-size:12px;color:var(--muted);font-weight:500}
+    .progress-subhead{font-size:13px;margin:19px 0 10px;font-weight:750}
+    .milestones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+    .milestone{border:1px solid #465561;background:#172532;color:#b7c5cd;border-radius:12px;padding:9px 5px;text-align:center;font-size:13px;font-weight:750}
+    .milestone.achieved{border-color:#80ca36;background:#b7f65b17;color:var(--green)}
+    .milestone-symbol{font-size:18px;margin-bottom:4px}
+    .progress-footnote{font-size:11px;line-height:1.45;color:var(--muted);margin:9px 0 0}
+    .progress-chart{display:flex;align-items:stretch;gap:8px;overflow-x:auto;min-height:143px;padding:8px 0 6px;scrollbar-color:#576b72 transparent}
+    .graph-column{flex:1 0 45px;max-width:100px;min-width:45px;display:flex;flex-direction:column;align-items:center;gap:6px}
+    .graph-value{font-size:10px;color:#e6efea;white-space:nowrap;font-variant-numeric:tabular-nums}
+    .graph-track{width:100%;height:97px;border-bottom:1px solid #465963;display:flex;align-items:flex-end;justify-content:center}
+    .graph-fill{width:70%;max-width:35px;min-height:0;border-radius:7px 7px 2px 2px;background:linear-gradient(0deg,#76aa3a,var(--green))}
+    #progressSpeedChart .graph-fill{background:linear-gradient(0deg,#397e81,var(--cyan))}
+    #progressWeeklyChart .graph-fill{background:linear-gradient(0deg,#667bd1,#afbefc)}
+    .graph-label{color:var(--muted);font-size:10px;text-align:center;white-space:nowrap}
+    .graph-empty{width:100%;min-height:90px;display:grid;place-items:center;color:var(--muted);font-size:12px;text-align:center}
+    .progress-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .progress-actions .minorbtn{flex:1;min-width:135px}
+    .manual-form{margin-top:14px;padding:15px;background:#0d1a23;border:1px solid #3c5761;border-radius:16px}
+    .manual-form h3{font-size:13px;margin:0 0 13px}
+    .manual-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .manual-field{display:flex;flex-direction:column;gap:5px}
+    .manual-field label{font-size:12px;color:#c5d3dd}
+    .manual-field input,.manual-field select{background:#182a35;border:1px solid #47606e;border-radius:10px;padding:12px 10px;color:var(--text);min-width:0;width:100%;font-size:15px}
+    .manual-form .btn{width:100%;margin-top:15px}
+    .progress-notice{font-size:12px;color:#f5d3a9;border:1px solid #6a503c;padding:11px;border-radius:12px;margin-top:12px;line-height:1.5}
+    @media(min-width:680px){.progress-stats{grid-template-columns:repeat(4,minmax(0,1fr))}.progress-panel{padding:20px}}
   </style>
 </head>
 <body>
@@ -61,6 +97,50 @@
     <div class="routehead"><h2 id="routeHeading">Traçado do percurso</h2><span>Desenho do GPS, sem mapa</span></div>
     <div class="route"><canvas id="pathCanvas" aria-label="Traçado esquemático do seu percurso de bicicleta" role="img"></canvas><div class="toolrow"><span class="note" id="pointCount">0 pontos registrados</span><button class="minorbtn" id="exportBtn" disabled>↓ Exportar GPX</button></div></div>
     <p class="note">O GPX pode ser aberto em aplicativos de mapas. A rota não é enviada para nenhum servidor por este site.</p>
+  </section>
+
+  <section class="section" id="progressSection" aria-labelledby="progressHeading">
+    <div class="routehead"><h2 id="progressHeading">Minha evolução 🚴</h2><span>Sem pressa, no seu ritmo</span></div>
+    <div class="progress-panel">
+      <p class="progress-intro">Um diário das suas pedaladas. Os dados ficam salvos neste navegador, mesmo depois de fechar o site.</p>
+      <div class="progress-stats" aria-label="Resumo do histórico">
+        <div class="progress-tile"><span>Pedaladas salvas</span><strong id="progressRideCount">0</strong></div>
+        <div class="progress-tile"><span>Distância acumulada</span><strong><span id="progressDistance">0,00</span> <small>km</small></strong></div>
+        <div class="progress-tile"><span>Maior pedalada</span><strong><span id="progressLongest">0,00</span> <small>km</small></strong></div>
+        <div class="progress-tile"><span>Dias pedalando (7 dias)</span><strong id="progressWeeks">0</strong></div>
+      </div>
+      <h3 class="progress-subhead">Marcos de distância</h3>
+      <div class="milestones" id="progressMilestones" aria-label="Marcos de 8, 10, 12 e 15 quilômetros"></div>
+      <p class="progress-footnote">Um marco é registrado quando você alcança essa distância em um passeio. Mas só aumente o desafio quando estiver confortável, combinado?</p>
+      <p class="note" id="progressEmpty">Ainda não tem pedalada aqui? Você pode adicionar a primeira do Strava sem precisar refazer o trajeto.</p>
+      <h3 class="progress-subhead">Distância — últimas 8 pedaladas</h3>
+      <div id="progressDistanceChart" class="progress-chart" role="list" aria-label="Gráfico de quilômetros por pedalada"></div>
+      <h3 class="progress-subhead">Velocidade média — últimas 8</h3>
+      <div id="progressSpeedChart" class="progress-chart" role="list" aria-label="Gráfico de velocidade média por pedalada"></div>
+      <h3 class="progress-subhead">Frequência — últimas 6 semanas</h3>
+      <div id="progressWeeklyChart" class="progress-chart" role="list" aria-label="Gráfico de número de pedaladas por semana"></div>
+      <div class="progress-actions">
+        <button class="minorbtn" type="button" id="toggleManualRide" aria-expanded="false" aria-controls="manualRideForm">+ Registrar pedalada do Strava</button>
+        <button class="minorbtn" type="button" id="downloadHistory">↓ Fazer backup</button>
+        <button class="minorbtn" type="button" id="restoreHistory">↑ Restaurar backup</button>
+        <input type="file" id="restoreHistoryFile" accept="application/json,.json" hidden aria-label="Arquivo de backup do PedalTrack">
+      </div>
+      <form id="manualRideForm" class="manual-form" hidden>
+        <h3>Adicionar pedalada anterior</h3>
+        <p class="note">Você pode copiar os dados do Strava. A velocidade média será calculada pela distância e pelo tempo em movimento.</p>
+        <div class="manual-fields">
+          <div class="manual-field"><label for="manualDate">Data</label><input id="manualDate" name="date" type="date" required></div>
+          <div class="manual-field"><label for="manualDistance">Distância (km)</label><input id="manualDistance" name="distance" type="number" inputmode="decimal" step="0.01" min="0.1" max="500" placeholder="8,03" required></div>
+          <div class="manual-field"><label for="manualMinutes">Tempo em movimento (min)</label><input id="manualMinutes" name="minutes" type="number" inputmode="numeric" min="1" max="6000" step="1" placeholder="59" required></div>
+          <div class="manual-field"><label for="manualSeconds">Segundos</label><input id="manualSeconds" name="seconds" type="number" inputmode="numeric" min="0" max="59" step="1" placeholder="21"></div>
+          <div class="manual-field"><label for="manualElevation">Subida acumulada (m) — opcional</label><input id="manualElevation" name="elevation" type="number" inputmode="numeric" min="0" max="15000" placeholder="113"></div>
+          <div class="manual-field"><label for="manualEffort">Como foi?</label><select id="manualEffort" name="effort"><option value="">Prefiro não avaliar</option><option value="leve">Tranquilo</option><option value="moderado">Moderado</option><option value="puxado">Muito puxado</option></select></div>
+        </div>
+        <button class="btn primary" type="submit">Salvar no meu diário</button>
+      </form>
+      <p id="progressNotice" class="progress-notice" role="status" aria-live="polite" hidden></p>
+      <p class="progress-footnote">O histórico não sincroniza entre dispositivos. Faça backup de tempos em tempos. Os arquivos de backup contêm datas e detalhes das pedaladas.</p>
+    </div>
   </section>
   <section class="section" aria-labelledby="historyHeading"><h2 id="historyHeading">Últimas pedaladas</h2><div class="history" id="history"><p class="note">Nenhuma pedalada salva ainda.</p></div></section>
   <footer class="footer">O GPS precisa de HTTPS e da sua permissão de localização. Para acompanhar velocidade em tempo real, mantenha esta página aberta e o celular ativo. Pedale com atenção — nada de olhar a tela no meio do trânsito.</footer>
@@ -107,14 +187,15 @@
  function resume(){if(status!=='paused')return;status='running';lastFix=null;lastTick=Date.now();ticker=setInterval(tick,1000);startGPS();lockScreen();render();}
  function finish(){if(!['running','paused'].includes(status))return;if(status==='running')tick();status='finished';clearInterval(ticker);ticker=null;stopGPS();unlockScreen();finishTime=new Date();gpsLabel('Pedalada salva','good');el.accuracy.textContent='Confira seus resultados e exporte o trajeto, se quiser.';saveSummary();render();}
  function reset(){if(status!=='finished')return;status='ready';points=[];lastFix=null;currentSpeed=0;maxSpeed=0;distanceMeters=0;movingSec=0;calories=0;activeSec=0;finishTime=null;gpsLabel('GPS aguardando');el.accuracy.textContent='Ative o GPS para começar a medir.';alertMessage('');drawRoute();render();}
- function saveSummary(){let arr=[];try{arr=JSON.parse(localStorage.getItem(HISTORY_KEY)||'[]');if(!Array.isArray(arr))arr=[]}catch(e){}arr.unshift({date:finishTime.toISOString(),distance:distanceMeters,seconds:movingSec,kcal:weight?Math.round(calories):null,max:maxSpeed});try{localStorage.setItem(HISTORY_KEY,JSON.stringify(arr.slice(0,12)))}catch(e){}renderHistory();}
- function renderHistory(){let arr=[];try{arr=JSON.parse(localStorage.getItem(HISTORY_KEY)||'[]')}catch(e){}el.history.replaceChildren();if(!Array.isArray(arr)||arr.length===0){const p=document.createElement('p');p.className='note';p.textContent='Nenhuma pedalada salva ainda.';el.history.append(p);return}for(const item of arr.slice(0,12)){const row=document.createElement('div');row.className='historyrow';const left=document.createElement('div'),right=document.createElement('div'),title=document.createElement('strong'),detail=document.createElement('p'),km=document.createElement('strong'),extra=document.createElement('small');const date=new Date(item.date);title.textContent=Number.isNaN(date.getTime())?'Pedalada':new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric'}).format(date);detail.textContent=timeFmt(item.seconds||0)+' em movimento';km.textContent=fmt((item.distance||0)/1000,2)+' km';extra.textContent=item.kcal==null?'kcal não calculadas':item.kcal+' kcal (est.)';left.append(title,detail);right.className='historyright';right.append(km,extra);row.append(left,right);el.history.append(row)}}
+ function saveSummary(){let arr=[];try{arr=JSON.parse(localStorage.getItem(HISTORY_KEY)||'[]');if(!Array.isArray(arr))arr=[]}catch(e){}arr.unshift({date:finishTime.toISOString(),distance:distanceMeters,seconds:movingSec,kcal:weight?Math.round(calories):null,max:maxSpeed});try{localStorage.setItem(HISTORY_KEY,JSON.stringify(arr.slice(0,300)))}catch(e){}renderHistory();window.dispatchEvent(new Event('pedaltrack:history-change'));}
+ function renderHistory(){let arr=[];try{arr=JSON.parse(localStorage.getItem(HISTORY_KEY)||'[]')}catch(e){}el.history.replaceChildren();if(!Array.isArray(arr)||arr.length===0){const p=document.createElement('p');p.className='note';p.textContent='Nenhuma pedalada salva ainda.';el.history.append(p);return}for(const item of arr.slice(0,12)){const row=document.createElement('div');row.className='historyrow';const left=document.createElement('div'),right=document.createElement('div'),title=document.createElement('strong'),detail=document.createElement('p'),km=document.createElement('strong'),extra=document.createElement('small');const date=new Date(item.date);title.textContent=Number.isNaN(date.getTime())?'Pedalada':new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric'}).format(date);detail.textContent=timeFmt(item.seconds||0)+' em movimento';km.textContent=fmt((item.distance||0)/1000,2)+' km';extra.textContent=item.source?(item.elevation==null?'Strava / manual':('Strava · '+fmt(item.elevation,0)+' m subida')):(item.kcal==null?'kcal não calculadas':item.kcal+' kcal (est.)');left.append(title,detail);right.className='historyright';right.append(km,extra);row.append(left,right);el.history.append(row)}}
  function drawRoute(){const canvas=el.canvas,rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2),width=rect.width||320,height=170;canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);ctx.clearRect(0,0,width,height);if(points.length<2){ctx.fillStyle='#8599a7';ctx.font='13px system-ui';ctx.textAlign='center';ctx.fillText('Seu trajeto vai aparecer aqui',width/2,height/2+5);return}const refLat=points[0].lat*Math.PI/180,coords=points.map(p=>({x:p.lon*Math.cos(refLat),y:p.lat})),xs=coords.map(p=>p.x),ys=coords.map(p=>p.y),xMin=Math.min(...xs),xMax=Math.max(...xs),yMin=Math.min(...ys),yMax=Math.max(...ys),range=Math.max(xMax-xMin,(yMax-yMin)*height/width,1e-7),pad=20,k=Math.min((width-pad*2)/Math.max(xMax-xMin,1e-7),(height-pad*2)/Math.max(yMax-yMin,1e-7));if(!Number.isFinite(k))return;const X=p=>width/2+(p.x-(xMin+xMax)/2)*k,Y=p=>height/2-(p.y-(yMin+yMax)/2)*k;ctx.lineWidth=3;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#b7f65b';ctx.beginPath();coords.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p)));ctx.stroke();const s=coords[0],e=coords[coords.length-1];ctx.fillStyle='#72d7d3';ctx.beginPath();ctx.arc(X(s),Y(s),5,0,Math.PI*2);ctx.fill();ctx.fillStyle='#b7f65b';ctx.beginPath();ctx.arc(X(e),Y(e),6,0,Math.PI*2);ctx.fill();}
  const xmlEscape=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[ch]));
  function exportGPX(){if(points.length<2)return;const items=points.map(p=>`<trkpt lat="${p.lat.toFixed(7)}" lon="${p.lon.toFixed(7)}">${p.ele!==null?`<ele>${p.ele.toFixed(1)}</ele>`:''}<time>${xmlEscape(p.at)}</time></trkpt>`).join('\n');const gpx=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="PedalTrack" xmlns="http://www.topografix.com/GPX/1/1"><metadata><name>Pedalada PedalTrack</name></metadata><trk><name>Pedalada</name><trkseg>${items}</trkseg></trk></gpx>`;const blob=new Blob([gpx],{type:'application/gpx+xml'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pedalada-'+new Date().toISOString().slice(0,10)+'.gpx';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);}
- el.start.addEventListener('click',begin);el.pause.addEventListener('click',pause);el.resume.addEventListener('click',resume);el.finish.addEventListener('click',finish);el.new.addEventListener('click',reset);el.export.addEventListener('click',exportGPX);el.weight.addEventListener('input',readWeight);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&status==='running')lockScreen()});window.addEventListener('resize',drawRoute);window.addEventListener('beforeunload',e=>{if(status==='running'||status==='paused'){e.preventDefault();e.returnValue='';}});
+ el.start.addEventListener('click',begin);el.pause.addEventListener('click',pause);el.resume.addEventListener('click',resume);el.finish.addEventListener('click',finish);el.new.addEventListener('click',reset);el.export.addEventListener('click',exportGPX);el.weight.addEventListener('input',readWeight);window.addEventListener('pedaltrack:history-change',renderHistory);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&status==='running')lockScreen()});window.addEventListener('resize',drawRoute);window.addEventListener('beforeunload',e=>{if(status==='running'||status==='paused'){e.preventDefault();e.returnValue='';}});
  try{const stored=localStorage.getItem(SETTINGS_KEY);if(stored)el.weight.value=stored}catch(e){}readWeight();renderHistory();render();drawRoute();if('serviceWorker' in navigator&&window.isSecureContext)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 })();
 </script>
+  <script src="./progress.js" defer></script>
 </body>
 </html>
